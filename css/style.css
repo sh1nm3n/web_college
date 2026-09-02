@@ -1,0 +1,14 @@
+h2 {
+    text-decoration-line: underline;
+    text-decoration-color: #e83e8c;
+    text-underline-offset: 6px;
+}
+
+.flex-container {
+    display: flex;
+
+}
+
+.flex-flower {
+    flex: 1 1 0;
+}
