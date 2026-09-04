@@ -7,53 +7,128 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">Лого</a>
-        </div>
-        <nav>
-            <a href="">меню</a>
-            <a href="">меню</a>
-            <a href="">меню</a>
-            <a href="">меню</a>
-            <a href="">контакты</a>
-        </nav>
+    <header class="header">
+        <div class="header__logo">Лого</div>
+        <ul class="header__nav">
+            <li><a href="#">меню</a></li>
+            <li><a href="#">меню</a></li>
+            <li><a href="#">меню</a></li>
+            <li><a href="#">меню</a></li>
+        </ul>
+        <div class="header__contacts">контакты</div>
     </header>
-    <div class="hero">
-        <h1>Заголовок</h1>
-        <p>Lorem ipsum dolor sit amet</p>
-        <form action="catalogue.html" method="get">
-            <button type="submit">цветы</button>
-        </form>
-    </div>
+
+    <section class="hero">
+        <h1 class="hero__title">Заголовок</h1>
+        <p class="hero__subtitle">Lorem ipsum dolor sit amet</p>
+        <button class="hero__btn">Заказать</button>
+    </section>
+
     <main>
-        <section class="pop_flowers">
-            <h2>Популярные букеты</h2>
-            <p>lorem ipsum</p>
-            <div class = "flex-container">
-                <div class="flex-flower">
-                    <img src="images/bouquet1.jpg" alt="bouquet1">
+        <section class="section section--light">
+            <div class="section__inner">
+            <h2 class="section__title">Популярные букеты</h2>
+            <p class="section__subtitle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <div class="card-row">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            <button class="btn-more">Смотреть все</button>
+            </div>
+        </section>
+
+        <section class="section section--muted">
+            <div class="section__inner">
+            <h2 class="section__title">Категории букетов</h2>
+            <p class="section__subtitle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <div class="card-row">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            </div>
+        </section>
+ 
+        <section class="section section--white">
+            <div class="section__inner">
+            <h2 class="section__title">Преимущества</h2>
+            <p class="section__subtitle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <div class="card-row">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            </div>
+        </section>
+
+        <section class="section section--blush">
+            <div class="section__inner">
+                <h2 class="section__title">Отзывы</h2>
+                <p class="section__subtitle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            </div>
+            <div class="review-list">
+                <div class="review-item">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    <div class="review-author">
+                        <div class="review-avatar"></div>
+                        <div class="review-author-info">
+                        <span>имя</span>
+                        <span>город</span>
+                    </div>
                 </div>
-                <div class="flex-flower">
-                    <img src="images/bouquet2.jpg" alt="bouquet1">
-                </div>
-                <div class="flex-flower">
-                    <img src="images/bouquet3.jpg" alt="bouquet1">
+            </div>
+            <div class="review-item">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                <div class="review-author">
+                    <div class="review-avatar"></div>
+                        <div class="review-author-info">
+                            <span>имя</span>
+                            <span>город</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="pop_flowers">
-            <h2>Категории букетов</h2>
-            <p>lorem ipsum</p>
+
+        <section class="section section--white">
+            <div class="section__inner">
+            <h2 class="section__title">Полезные статьи</h2>
+            <p class="section__subtitle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <div class="card-row">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            </div>
         </section>
-        <section class="pop_flowers">
-            <h2>Преимущества</h2>
-            <p>lorem ipsum</p>
-        </section>
-        <section class="pop_flowers">
-            <h2>Отзывы</h2>
-            <p>lorem ipsum</p>
-        </section>
+
+        <footer class="footer">
+            <div class="footer__columns">
+                <div class="footer-col footer-col--menu">
+                    <h3 class="footer-col__title">Заголовок</h3>
+                    <ul>
+                        <li>меню</li>
+                        <li>меню</li>
+                        <li>меню</li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-col--text">
+                    <h3 class="footer-col__title">Заголовок</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    <p>Aenean commodo ligula eget dolor. Aenean massa.</p>
+                </div>
+                <div class="footer-col footer-col--text">
+                    <h3 class="footer-col__title">Заголовок</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    <p>Aenean commodo ligula eget dolor. Aenean massa.</p>
+            </div>
+            </div>
+            <div class="footer__bottom">Copyright</div>
+        </footer>
+
     </main>
 </body>
 </html>
