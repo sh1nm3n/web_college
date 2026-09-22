@@ -1,42 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sdsadasds</title>
+    <title>Boutique de fleurs — цветочный бутик</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header class="header">
         <div class="header__logo">Boutique de fleurs</div>
-        <ul class="header__nav">
+
+        <button class="burger" id="burgerBtn" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="header__nav" id="headerNav">
             <li><a href="#">Популярные</a></li>
             <li><a href="#">Категории</a></li>
             <li><a href="#">Преимущества</a></li>
             <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Вопросы</a></li>
+            <li><a href="#">Галерея</a></li>
         </ul>
-        <div class="header__contacts">контакты</div>
+
+        <div class="header__actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">🌙</button>
+            <div class="header__contacts">контакты</div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1 class="hero__title">Boutique de fleurs</h1>
-    </section>
-
     <main>
+        <section class="hero">
+            <h1 class="hero__title">Boutique de fleurs</h1>
+            <p class="hero__subtitle">Свежие букеты с доставкой день в день</p>
+            <button class="cta-btn js-open-modal">Оставить заявку</button>
+        </section>
+
         <section class="section section--light">
             <div class="section__inner">
                 <h2 class="section__title">Популярные букеты</h2>
                 <div class="card-row">
                     <div class="card">
-                        <img src="images/bouquet1.jpg" alt="1">
+                        <img src="images/bouquet1.jpg" alt="Букет №1">
                     </div>
                     <div class="card">
-                        <img src="images/bouquet2.jpg" alt="2">
+                        <img src="images/bouquet2.jpg" alt="Букет №2">
                     </div>
                     <div class="card">
-                        <img src="images/bouquet3.jpg" alt="">
+                        <img src="images/bouquet3.jpg" alt="Букет №3">
                     </div>
                 </div>
                 <button class="btn-more">Смотреть все</button>
@@ -48,13 +63,13 @@
                 <h2 class="section__title">Категории букетов</h2>
                 <div class="card-row">
                     <div class="card">
-                        <img src="images/kat1.jpg" alt="">
+                        <img src="images/kat1.jpg" alt="Категория букетов №1">
                     </div>
                     <div class="card">
-                        <img src="images/kat2.webp" alt="">
+                        <img src="images/kat2.webp" alt="Категория букетов №2">
                     </div>
                     <div class="card">
-                        <img src="images/kat3.jpg" alt="">
+                        <img src="images/kat3.jpg" alt="Категория букетов №3">
                     </div>
                 </div>
             </div>
@@ -62,28 +77,46 @@
 
         <section class="section section--white">
             <div class="section__inner">
-                <h2 class="section__title">Преимущества</h2>
-                <div class="card-row">
-                    <div class="card">
-                        <p>Уникальный ассортимент:<br>Продаются редкие сорта цветов, экзотические растения
-                            и элитные брендовые упаковки.</p>
+                <h2 class="section__title">Преимущества</h2 </div>
+                <div class="benefit-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M2 7h12v9H2z" />
+                                <path d="M14 10h4l4 3v3h-8z" />
+                                <circle cx="6" cy="18" r="2" />
+                                <circle cx="17" cy="18" r="2" />
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Быстрая доставка</h3>
+                        <p class="benefit-text">Привезём букет в течение 60 минут по городу, точно в срок.</p>
                     </div>
-                    <div class="card">
-                        <p>Авторская флористика: Букеты создают профессиональные дизайнеры с учетом современных
-                            тенденций, а не по стандартным шаблонам.</p>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21s-7-4.5-9.5-9C1 8 2.5 4 6.5 4c2 0 4 1.5 5.5 3.5C13.5 5.5 15.5 4 17.5 4 21.5 4 23 8 21.5 12c-2.5 4.5-9.5 9-9.5 9z" />
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Свежие цветы</h3>
+                        <p class="benefit-text">Работаем напрямую с поставщиками — букеты собираем день в день.</p>
                     </div>
-                    <div class="card">
-                        <p>Индивидуальный подход: Флористы учитывают все пожелания клиента, помогают подобрать подарок
-                            под конкретный повод и атмосферу.</p>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z" />
+                                <path d="M9 12l2 2 4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Гарантия качества</h3>
+                        <p class="benefit-text">Если букет завянет раньше срока — заменим бесплатно.</p>
                     </div>
                 </div>
-            </div>
         </section>
 
         <section class="section section--blush">
             <div class="section__inner">
                 <h2 class="section__title">Отзывы</h2>
-                <p class="section__subtitle">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             </div>
             <div class="review-list">
                 <div class="review-item">
@@ -114,46 +147,171 @@
         <section class="section section--white">
             <div class="section__inner">
                 <h2 class="section__title">Полезные статьи</h2>
-                <div class="card-row">
-                    <div class="card">
-                        <img src="images/guide1.jpg" alt="">
-                        <span>Уход</span>
-                        <h4>Как продлить жизнь букета</h4>
+                <p class="section__subtitle"></p>
+            </div>
+            <div class="article-grid">
+                <article class="article-card">
+                    <div class="article-card__image">
+                        <img src="https://images.pexels.com/photos/19795605/pexels-photo-19795605.jpeg?auto=compress&cs=tinysrgb&w=700"
+                            alt="Букет в стеклянной вазе">
                     </div>
-                    <div class="card">
-                        <img src="images/guide2.jpg" alt="">
-                        <span>Уход</span>
-                        <h4>Как правильно ухаживать за цветами</h4>
+                    <div class="article-card__body">
+                        <span class="article-card__meta">Уход · 5 мин чтения</span>
+                        <h3 class="article-card__title">Как продлить жизнь букета</h3>
+                        <p class="article-card__excerpt">
+
+                        </p>
+                        <a href="#" class="article-card__link">Читать далее →</a>
                     </div>
-                    <div class="card">
-                        <img src="images/guide3.avif" alt="">
-                        <span>Подарки</span>
-                        <h4>Как подобрать букет в подарок</h4>
+                </article>
+                <article class="article-card">
+                    <div class="article-card__image">
+                        <img src="https://images.pexels.com/photos/31739475/pexels-photo-31739475.jpeg?auto=compress&cs=tinysrgb&w=700"
+                            alt="Розовые и лавандовые цветы в вазах">
+                    </div>
+                    <div class="article-card__body">
+                        <span class="article-card__meta">Идеи · 4 мин чтения</span>
+                        <h3 class="article-card__title">Топ-5 цветов для свадьбы</h3>
+                        <p class="article-card__excerpt">
+
+                        </p>
+                        <a href="#" class="article-card__link">Читать далее →</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-card__image">
+                        <img src="https://images.pexels.com/photos/26634882/pexels-photo-26634882.jpeg?auto=compress&cs=tinysrgb&w=700"
+                            alt="Цветы в керамических вазах">
+                    </div>
+                    <div class="article-card__body">
+                        <span class="article-card__meta">Советы · 3 мин чтения</span>
+                        <h3 class="article-card__title">Как выбрать букет в подарок</h3>
+                        <p class="article-card__excerpt">
+
+                            <a href="#" class="article-card__link">Читать далее →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="section section--muted">
+            <div class="section__inner">
+                <h2 class="section__title">Часто задаваемые вопросы</h2>
+                <p class="section__subtitle"></p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Как оформить заказ?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Выберите букет в каталоге или оставьте заявку через форму — мы перезвоним и уточним детали
+                            доставки.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Как быстро привезут букет?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>В среднем доставка занимает от 60 минут по городу. Точное время подтвердит менеджер после
+                            звонка.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Можно ли изменить состав букета?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, состав и упаковку можно изменить при оформлении заказа — просто укажите пожелания в
+                            заявке.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Что делать, если цветы завяли раньше срока?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Свяжитесь с нами в течение суток — мы заменим букет бесплатно по гарантии качества.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer class="footer">
-            <div class="footer__columns">
-                <div class="footer-col footer-col--menu">
-                    <h3 class="footer-col__title">Меню</h3>
-                    <ul>
-                        <li>Популярные</li>
-                        <li>Категории</li>
-                        <li>Отзывы</li>
-                    </ul>
+        <section class="section section--white">
+            <div class="section__inner">
+                <h2 class="section__title">Галерея</h2>
+                <p class="section__subtitle"></p>
+            </div>
+            <div class="gallery">
+                <div class="gallery__main">
+                    <img id="galleryMain"
+                        src="https://images.pexels.com/photos/30734753/pexels-photo-30734753.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Букет крупным планом">
                 </div>
-                <div class="footer-col footer-col--text">
-                    <h3 class="footer-col__title">Boutique de fleurs</h3>
-                    <p>Une ambiance chaleureuse.</p>
-                    <p>Élégant et raffiné.</p>
+                <div class="gallery__thumbs">
+                    <img class="gallery__thumb is-active"
+                        src="https://images.pexels.com/photos/30734753/pexels-photo-30734753.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        data-full="https://images.pexels.com/photos/30734753/pexels-photo-30734753.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Букет тюльпанов">
+                    <img class="gallery__thumb"
+                        src="https://images.pexels.com/photos/37222812/pexels-photo-37222812.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        data-full="https://images.pexels.com/photos/37222812/pexels-photo-37222812.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Букет из роз и хризантем">
+                    <img class="gallery__thumb"
+                        src="https://images.pexels.com/photos/34580551/pexels-photo-34580551.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        data-full="https://images.pexels.com/photos/34580551/pexels-photo-34580551.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Букет с герберами">
+                    <img class="gallery__thumb"
+                        src="https://images.pexels.com/photos/36739287/pexels-photo-36739287.jpeg?auto=compress&cs=tinysrgb&w=200"
+                        data-full="https://images.pexels.com/photos/36739287/pexels-photo-36739287.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Витрина цветочного магазина">
                 </div>
             </div>
-            <div class="footer__bottom">Copyright</div>
-        </footer>
-
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer__columns">
+            <div class="footer-col footer-col--menu">
+                <h3 class="footer-col__title">Меню</h3>
+                <ul>
+                    <li>Популярные</li>
+                    <li>Категории</li>
+                    <li>Отзывы</li>
+                    <li>Вопросы</li>
+                    <li>Галерея</li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col--text">
+                <h3 class="footer-col__title">Boutique de fleurs</h3>
+                <p>Une ambiance chaleureuse.</p>
+                <p>Élégant et raffiné.</p>
+            </div>
+        </div>
+        <div class="footer__bottom">Copyright</div>
+    </footer>
+
+    <!-- Модальное окно (Задание 2, 3) -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal__close" id="modalClose" aria-label="Закрыть">&times;</button>
+            <h3 class="modal__title">Оставить заявку</h3>
+            <form class="modal__form" id="modalForm">
+                <input type="text" name="name" placeholder="Ваше имя" required>
+                <input type="tel" name="phone" placeholder="Телефон" required>
+                <button type="submit" class="btn-more modal__submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Кнопка "Наверх" (Задание 5) -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Наверх">↑</button>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
