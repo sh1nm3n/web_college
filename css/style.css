@@ -99,10 +99,9 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ===== Hero ===== */
 
 .hero {
-    background: url(https://w.wallhaven.cc/full/0p/wallhaven-0p9jr3.jpg) center/cover no-repeat;
+    background: url("../images/hero.jpg") center/cover no-repeat;
     padding: 100px 24px;
     text-align: center;
 }
@@ -112,14 +111,12 @@ body {
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 16px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero__subtitle {
-    color: #000000;
+    color: #f2f2f2;
     font-size: 18px;
     margin-bottom: 32px;
-    text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 
 .cta-btn {
@@ -141,7 +138,6 @@ body {
     box-shadow: 0 10px 22px rgba(214, 36, 122, 0.35);
 }
 
-/* ===== Shared section layout ===== */
 
 .section {
     padding: 64px 24px;
@@ -198,7 +194,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* ===== Photo cards (Популярные букеты / Категории) ===== */
 
 .card-row {
     display: flex;
@@ -243,7 +238,6 @@ body {
     transform: scale(1.05);
 }
 
-/* ===== Преимущества ===== */
 
 .benefit-grid {
     display: flex;
@@ -298,7 +292,6 @@ body {
     line-height: 1.55;
 }
 
-/* ===== Отзывы ===== */
 
 .review-list {
     display: flex;
@@ -349,7 +342,6 @@ body {
     line-height: 1.4;
 }
 
-/* ===== Полезные статьи ===== */
 
 .article-grid {
     display: flex;
@@ -434,7 +426,6 @@ body {
     text-decoration: underline;
 }
 
-/* ===== Модальное окно (Задание 2, 3) ===== */
 
 .modal-overlay {
     position: fixed;
@@ -512,7 +503,6 @@ body {
     width: 100%;
 }
 
-/* ===== Кнопка "Наверх" (Задание 5) ===== */
 
 .scroll-top {
     position: fixed;
@@ -541,7 +531,6 @@ body {
     transform: translateY(-4px);
 }
 
-/* ===== FAQ-аккордеон (Задание 6) ===== */
 
 .faq-list {
     width: 100%;
@@ -596,7 +585,6 @@ body {
     line-height: 1.6;
 }
 
-/* ===== Галерея (Задание 8) ===== */
 
 .gallery {
     display: flex;
@@ -648,7 +636,6 @@ body {
     border-color: #d6247a;
 }
 
-/* ===== Бургер-меню: адаптив (Задание 4) ===== */
 
 @media (max-width: 768px) {
     .burger {
@@ -663,16 +650,15 @@ body {
         background: #ffffff;
         flex-direction: column;
         gap: 4px;
-        padding: 0 40px;
+        padding: 16px 40px 24px;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease, padding 0.3s ease;
+        transition: max-height 0.3s ease;
         z-index: 90;
     }
 
     .header__nav.is-open {
-        max-height: 320px;
-        padding: 16px 40px 24px;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
     }
 
     .header__nav a {
@@ -681,7 +667,6 @@ body {
     }
 }
 
-/* ===== Тёмная тема (Задание 7) ===== */
 
 body.dark-theme {
     background: #161616;
@@ -776,7 +761,6 @@ body.dark-theme .btn-more:hover {
     color: #161616;
 }
 
-/* ===== Footer ===== */
 
 .footer {
     background: #2b2b2b;

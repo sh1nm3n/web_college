@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ==========================================================
-       Задание 2, 3 — модальное окно «Оставить заявку»
-    ========================================================== */
     const modalOverlay = document.getElementById('modalOverlay');
     const openModalBtns = document.querySelectorAll('.js-open-modal');
     const closeModalBtn = document.getElementById('modalClose');
@@ -17,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModalBtn.addEventListener('click', closeModal);
     }
 
-    // Закрытие по клику на затемнённый фон (не по самому окну)
+
     if (modalOverlay) {
         modalOverlay.addEventListener('click', (event) => {
             if (event.target === modalOverlay) {
@@ -26,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Закрытие по Escape
+
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
             closeModal();
@@ -42,30 +39,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ==========================================================
-       Задание 4 — бургер-меню
-    ========================================================== */
     const burgerBtn = document.getElementById('burgerBtn');
     const headerNav = document.getElementById('headerNav');
 
     if (burgerBtn && headerNav) {
+
+        const openMenu = () => {
+            headerNav.classList.add('is-open');
+            burgerBtn.classList.add('is-open');
+            burgerBtn.setAttribute('aria-expanded', 'true');
+            headerNav.style.maxHeight = headerNav.scrollHeight + 'px';
+        };
+
+        const closeMenu = () => {
+            headerNav.classList.remove('is-open');
+            burgerBtn.classList.remove('is-open');
+            burgerBtn.setAttribute('aria-expanded', 'false');
+            headerNav.style.maxHeight = null;
+        };
+
         burgerBtn.addEventListener('click', () => {
-            burgerBtn.classList.toggle('is-open');
-            headerNav.classList.toggle('is-open');
+            const isOpen = headerNav.classList.contains('is-open');
+            isOpen ? closeMenu() : openMenu();
         });
 
-        // Закрываем меню после клика по ссылке (мобильная версия)
         headerNav.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', () => {
-                burgerBtn.classList.remove('is-open');
-                headerNav.classList.remove('is-open');
-            });
+            link.addEventListener('click', closeMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (headerNav.classList.contains('is-open')) {
+                headerNav.style.maxHeight = headerNav.scrollHeight + 'px';
+            }
         });
     }
 
-    /* ==========================================================
-       Задание 5 — кнопка «Наверх»
-    ========================================================== */
     const scrollTopBtn = document.getElementById('scrollTopBtn');
 
     if (scrollTopBtn) {
@@ -82,9 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ==========================================================
-       Задание 6 — аккордеон FAQ
-    ========================================================== */
     document.querySelectorAll('.faq-question').forEach((question) => {
         question.addEventListener('click', () => {
             const item = question.closest('.faq-item');
@@ -101,9 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ==========================================================
-       Задание 7 — переключение светлой / тёмной темы
-    ========================================================== */
     const themeToggle = document.getElementById('themeToggle');
     const savedTheme = localStorage.getItem('theme');
 
@@ -120,9 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ==========================================================
-       Задание 8 — галерея изображений
-    ========================================================== */
     const galleryMain = document.getElementById('galleryMain');
     const thumbs = document.querySelectorAll('.gallery__thumb');
 
