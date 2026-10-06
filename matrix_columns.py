@@ -4,7 +4,6 @@
 
 
 def read_size():
-    """Ввод размеров матрицы n (строки) и m (столбцы) с проверкой."""
     while True:
         try:
             n = int(input("Введите количество строк n: "))
@@ -17,7 +16,6 @@ def read_size():
 
 
 def read_row(number, m):
-    """Ввод одной строки матрицы: ровно m вещественных чисел через пробел."""
     while True:
         text = input(f"Строка {number} (элементов: {m}, через пробел): ")
         try:
@@ -31,7 +29,6 @@ def read_row(number, m):
 
 
 def read_matrix(n, m):
-    """Построчный ввод матрицы размерности n * m."""
     matrix = []
     for i in range(n):
         matrix.append(read_row(i + 1, m))
@@ -39,18 +36,15 @@ def read_matrix(n, m):
 
 
 def get_column(matrix, j):
-    """Возвращает j-й столбец матрицы (нумерация с нуля)."""
     return [row[j] for row in matrix]
 
 
 def print_matrix(matrix):
-    """Вывод матрицы построчно (для проверки ввода)."""
     for row in matrix:
         print(" ".join(str(x) for x in row))
 
 
 def print_by_columns(matrix, m):
-    """Вывод матрицы по столбцам."""
     for j in range(m):
         column = get_column(matrix, j)
         print(f"Столбец {j + 1}: " + " ".join(str(x) for x in column))
